@@ -30,8 +30,8 @@ phase = F_lena./amp;
 
 
 subplot(1,3,1), imshow(lena), title('Original Image')
-subplot(1,3,2), imshow(amp), title('Amplitude')
-subplot(1,3,3), imshow(phase), title('Phase')
+subplot(1,3,2), imshow(log(amp), []), title('Amplitude')
+subplot(1,3,3), imshow(phase, []), title('Phase')
 
 
 spatial_amp = ifft2(amp);
@@ -39,5 +39,5 @@ spatial_phase = ifft2(phase);
 
 figure
 subplot(1,3,1), imshow(lena), title('Original Image')
-subplot(1,3,2), imshow(spatial_amp), title('Reconstructed with Amplitude')
-subplot(1,3,3), imshow(spatial_phase), title('Reconstructed with Phase')
+subplot(1,3,2), imshow(spatial_amp, []), title('Reconstructed with Amplitude')
+subplot(1,3,3), imshow(spatial_phase, []), title('Reconstructed with Phase')
